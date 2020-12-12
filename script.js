@@ -125,8 +125,15 @@ function calculate(){
 function upDisp(){
 
     if(Number.isInteger(parseInt(this.textContent)) && !calcComplete){
-
+        if(disp.textContent=='0' && this.textContent=='0'){
+            return;
+        }
+        if(disp.textContent=='0'){
+            disp.textContent= this.textContent;
+        }
+        else{
         appendNumber(this.textContent);
+        }
     }
 
     if(this.textContent == '+/-' && !calcComplete && !disp.textContent == ''){
@@ -139,7 +146,7 @@ function upDisp(){
         }
     }
     
-    if(this.textContent == '←' && !calcComplete){
+    if(this.textContent == 'C' && !calcComplete){
         
         if(!disp.textContent==''){
             disp.textContent = disp.textContent.slice(0,-1);
@@ -147,6 +154,11 @@ function upDisp(){
         else{
             return;
         }
+    }
+
+    if(this.textContent == '%' && !calcComplete){
+        
+        disp.textContent = parseFloat(disp.textContent) / 100;
     }
 
     if(this.textContent == '.' && !calcComplete){
