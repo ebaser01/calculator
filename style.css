@@ -75,6 +75,14 @@ background: linear-gradient(to right, #E1F5C4, #EDE574); /* W3C, IE 10+/ Edge, F
 #buttons button:hover{
     background-color: rgb(49, 49, 49);
 }
+
+.operation:hover{
+    background-color: rgb(245, 184, 70) !important;
+}
+#all_clear:hover, #clear:hover{
+    background-color: rgb(255, 62, 62) !important;
+}
+
 #buttons button:focus{
     
     outline: none;
